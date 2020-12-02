@@ -15,7 +15,7 @@ class BlistView : AppCompatActivity() {
         val adaptador = ArrayAdapter(
             this,
             android.R.layout.simple_list_item_1, // xml visual q ya existe
-            BaseDatosMemoria.arregloEnteros // arreglo que se necesita mandar
+            BaseDatosMemoria.arregloEntrenadores // arreglo que se necesita mandar
 
         )
 
@@ -28,17 +28,17 @@ class BlistView : AppCompatActivity() {
 
         botonAnadirLV
             .setOnClickListener {
-                anadirLitView(adaptador, 1, BaseDatosMemoria.arregloEnteros)
+                anadirLitView(adaptador, 1, BaseDatosMemoria.arregloEntrenadores)
             }
 
 
     }
     fun anadirLitView(
-        adaptador: ArrayAdapter<Int>,
+        adaptador: ArrayAdapter<BEntrenador>,
         item: Int,
-        arreglo: ArrayList<Int>
+        arreglo: ArrayList<BEntrenador>
     ) {
-        arreglo.add(item)
+        arreglo.add(BEntrenador("Carlos", "As frente batalla"))
         adaptador.notifyDataSetChanged()
 
     }
