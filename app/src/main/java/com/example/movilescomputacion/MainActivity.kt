@@ -11,6 +11,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
+        BaseDatosMemoria.cargaInicialDatos()
+
         val button2 = findViewById<Button>(R.id.btn_ir_list_view)
         button2.setOnClickListener {
             irListView()
