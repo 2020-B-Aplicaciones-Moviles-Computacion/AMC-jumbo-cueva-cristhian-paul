@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mensaje">hola port</string>
+    <color name="texto">#FF03DAC5</color>
+    <color name="backgroud">#0900A7</color>
+</resources>

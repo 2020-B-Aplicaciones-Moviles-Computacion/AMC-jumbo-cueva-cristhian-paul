@@ -1,0 +1,55 @@
+[
+  {
+    "nombre": "Fisica",
+    "creditos": 1945,
+    "codigo": "001CD",
+    "habilitado": true,
+    "estudiantes": [
+      {
+        "nombre": "Paul",
+        "codigo": "ed01",
+        "sexo": "M",
+        "fechaRegistro": {
+          "date": {
+            "year": 2020,
+            "month": 7,
+            "day": 8
+          },
+          "time": {
+            "hour": 22,
+            "minute": 12,
+            "second": 21,
+            "nano": 76267300
+          }
+        },
+        "tieneBeca": false
+      },
+      {
+        "nombre": "asdff",
+        "codigo": "201510312",
+        "sexo": "M",
+        "fechaRegistro": {
+          "date": {
+            "year": 2020,
+            "month": 12,
+            "day": 9
+          },
+          "time": {
+            "hour": 21,
+            "minute": 23,
+            "second": 59,
+            "nano": 432597000
+          }
+        },
+        "tieneBeca": true
+      }
+    ]
+  },
+  {
+    "nombre": "MaTEOFI",
+    "creditos": 4,
+    "codigo": "001A",
+    "habilitado": true,
+    "estudiantes": []
+  }
+]
