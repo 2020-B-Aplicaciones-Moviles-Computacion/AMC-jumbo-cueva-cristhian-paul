@@ -3,16 +3,13 @@ package com.example.movilescomputacion
 import android.os.Parcel
 import android.os.Parcelable
 
-class BEntrenador (
-    var nombre: String?,
-    var descripcion: String?,
-    val liga: DLiga?
+class DLiga (
+    val nombre: String?,
+    val descripcion: String?
 ): Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString(),
-        parcel.readString(),
-        parcel.readParcelable(DLiga::class.java.classLoader)
-
+        parcel.readString()
     ) {
     }
 
@@ -29,12 +26,12 @@ class BEntrenador (
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<BEntrenador> {
-        override fun createFromParcel(parcel: Parcel): BEntrenador {
-            return BEntrenador(parcel)
+    companion object CREATOR : Parcelable.Creator<DLiga> {
+        override fun createFromParcel(parcel: Parcel): DLiga {
+            return DLiga(parcel)
         }
 
-        override fun newArray(size: Int): Array<BEntrenador?> {
+        override fun newArray(size: Int): Array<DLiga?> {
             return arrayOfNulls(size)
         }
     }

@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Parcelable
 import android.util.Log
 import android.widget.Button
 
@@ -13,6 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
+        val CODIGO_ACTUALIZAR_DATOS: Int = 102
         BaseDatosMemoria.cargaInicialDatos()
 
         val button2 = findViewById<Button>(R.id.btn_ir_list_view)
@@ -36,18 +38,37 @@ class MainActivity : AppCompatActivity() {
             intentExplicito.putExtra("apellido", "Jumbo")
             intentExplicito.putExtra("edad", 31)
             startActivityForResult(intentExplicito, 102)
-//            val parametros = arrayListOf<Pair<String, *>>(
-//                Pair("nombre", "Cristhian"),
-//                Pair("apellido", "Jumbo"),
-//                Pair("edad", 23)
-//            )
-//            irActivida(CIntentExplicitoParametros::class.java, parametros)
+
+
+            val liga = DLiga("Kanto", "Pokemon")
+            val entrenador = BEntrenador("Ash", "Pieblo Paleta", liga)
+            val parametros = arrayListOf<Pair<String, *>>(
+                Pair("nombre", "Cristhian"),
+                Pair("apellido", "Jumbo"),
+                Pair("edad", 23),
+                Pair("ash", entrenador)
+            )
+            irActivida(CIntentExplicitoParametros::class.java, parametros, CODIGO_ACTUALIZAR_DATOS)
         }
-    }
+        EBaseDeDatos.TablaUsuarioE = ESqliteHelperUsuario(this)
+        val usuarioEcontrado = EBaseDeDatos.TablaUsuarioE?.consultarUsuarioPorId(1)
+        Log.i("bdd", "ID:${usuarioEcontrado?.id} Nombre: ${usuarioEcontrado?.nombre} Descripcion: ${usuarioEcontrado?.descripcion}")
+
+        if(usuarioEcontrado?.id == 0) {
+            val resultado = EBaseDeDatos.TablaUsuarioE?.crearUsarioFormulario("Adrian", "Profe")
+            if(resultado != null) {
+                Log.i("bdd", "se creo correcatamente")
+            } else {
+                Log.i("bdd", "hubo Errrores ${resultado}")
+            }
+        }
+    } //Fin on create
+
 
     fun irActivida(
         clase: Class<*>,
-        parametros: ArrayList<Pair<String, *>>? = null
+        parametros: ArrayList<Pair<String, *>>? = null,
+        codigo: Int? = null
     ) {
         val intentExplicito = Intent(
             this,
@@ -56,9 +77,30 @@ class MainActivity : AppCompatActivity() {
         if (parametros != null){
             parametros.forEach{
                 var nombreVariables = it.first
-                var valorVariable =  it.second is Any
-                intentExplicito.putExtra(nombreVariables, valorVariable)
+                var valorVariable =  it.second
+                var tipoDatos = false
+
+                tipoDatos = it.second is String // instnceOf()
+                if(tipoDatos == true){
+
+                    intentExplicito.putExtra(nombreVariables, valorVariable as String)
+                }
+                tipoDatos = it.second is Int // instnceOf()
+                if(tipoDatos == true){
+
+                    intentExplicito.putExtra(nombreVariables, valorVariable as Int)
+                }
+                tipoDatos = it.second is Parcelable // instnceOf()
+                if(tipoDatos == true){
+
+                    intentExplicito.putExtra(nombreVariables, valorVariable as Parcelable)
+                }
             }
+        }
+        if (codigo != null) {
+            startActivityForResult(intentExplicito,codigo)
+        } else {
+            startActivity(intentExplicito)
         }
         intentExplicito.putExtra("nombre", "Adrian")
         startActivity(intentExplicito)

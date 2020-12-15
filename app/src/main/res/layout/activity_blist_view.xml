@@ -9,16 +9,13 @@
     <ListView
         android:id="@+id/lv_entrenador"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteY="92dp" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btn_anadir_item_lv"
-        android:layout_width="198dp"
-        android:layout_height="66dp"
-        android:text="Añadir"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/btn_anadir_item_lv"
+            android:layout_width="198dp"
+            android:layout_height="66dp"
+            android:text="Añadir" />
+    </ListView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

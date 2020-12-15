@@ -7,9 +7,9 @@ class BaseDatosMemoria{
         val arregloEntrenadores = arrayListOf<BEntrenador>()
 
         fun cargaInicialDatos(){
-            arregloEntrenadores.add(BEntrenador("Cristhian", "lider Gimnacio"))
-            arregloEntrenadores.add(BEntrenador("Estevan", "alto mando"))
-            arregloEntrenadores.add(BEntrenador("Galactic", "campeon de liga"))
+          //  arregloEntrenadores.add(BEntrenador("Cristhian", "lider Gimnacio"))
+           // arregloEntrenadores.add(BEntrenador("Estevan", "alto mando"))
+          //  arregloEntrenadores.add(BEntrenador("Galactic", "campeon de liga"))
         }
 
 
