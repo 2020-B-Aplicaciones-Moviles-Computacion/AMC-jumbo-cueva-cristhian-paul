@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.os.Parcelable
 import android.util.Log
 import android.widget.Button
+import java.util.*
+import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,7 +63,26 @@ class MainActivity : AppCompatActivity() {
             } else {
                 Log.i("bdd", "hubo Errrores ${resultado}")
             }
+        } else {
+            val resultado = EBaseDeDatos.TablaUsuarioE?.actualizarUsuario("Jumbo", Date().time.toString(), 1)
+            if(resultado != null) {
+                Log.i("bdd", "se actualizo")
+
+            } else {
+                Log.i("bdd", "Errores")
+
+            }
         }
+
+        val botonIrIntentConRespuesta = findViewById<Button>(
+            R.id.btn_ir_intent_con_respuesta
+        )
+        botonIrIntentConRespuesta
+            .setOnClickListener {
+                irActivida(
+                    FIntentConRespuesta::class.java
+                )
+            }
     } //Fin on create
 
 

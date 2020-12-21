@@ -78,4 +78,39 @@ class ESqliteHelperUsuario (contexto: Context?): SQLiteOpenHelper(
         return if(resultadoEscritura.toInt() == -1 ) false else true
     }
 
+    fun actualizarUsuario(
+            nombre: String,
+            descripcion: String,
+            idActualizar: Int
+    ): Boolean {
+        val conexionEscritura = writableDatabase
+        val valoresAActualizar = ContentValues()
+        valoresAActualizar.put("nombre", nombre)
+        valoresAActualizar.put("descripcion", descripcion)
+        val resultadoActualizar = conexionEscritura
+                .update(
+                        "USUARIO",
+                        valoresAActualizar,
+                        "id=?",
+                        arrayOf(idActualizar.toString()) // PArams whre
+                )
+        conexionEscritura.close()
+        return if (resultadoActualizar.toInt() == -1) false else true
+    }
+    fun eliminarUsuario(
+            id: Int
+    ): Boolean {
+        val conexionEscritura = writableDatabase
+        val resultadoEliminacion = conexionEscritura
+                .delete(
+                        "USUARIO",
+                        "id=?",
+                        arrayOf(
+                                id.toString()
+                        )//parametros
+                )
+        conexionEscritura.close()
+        return if (resultadoEliminacion.toInt() == -1) false else true
+    }
+
 }
