@@ -83,6 +83,20 @@ class MainActivity : AppCompatActivity() {
                     FIntentConRespuesta::class.java
                 )
             }
+
+        val botonRecyclerView = findViewById<Button>(R.id.btn_ir_recycler_view)
+        botonRecyclerView.setOnClickListener {
+            irActivida(
+                GRecyclerView::class.java
+            )
+        }
+
+        val botoIrHttp = findViewById<Button>(R.id.btn_http)
+        botoIrHttp.setOnClickListener {
+            irActivida(
+                    HHttpActivity::class.java
+            )
+        }
     } //Fin on create
 
 
