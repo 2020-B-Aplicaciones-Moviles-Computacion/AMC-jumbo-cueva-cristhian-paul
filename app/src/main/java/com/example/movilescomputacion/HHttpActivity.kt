@@ -13,39 +13,39 @@ class HHttpActivity : AppCompatActivity() {
         setContentView(R.layout.activity_h_http)
 
         //  metodoGetAll()
-        // metodoGet()
-        //  metodoPost()
-        // metodoUpdate(1)
-        // metodoDelete(1)
+       // metodoGet()
+       // metodoPost()
+       //  metodoUpdate(1)
+       // metodoDelete(1)
         metodoBusquedaUserId(3)
     }
 
-//    fun metodoGetAll() {
-//        "https://jsonplaceholder.typicode.com/posts/"
-//            .httpGet()
-//            .responseString{
-//                    request, response, result ->
-//                when (result) {
-//                    is Result.Failure -> {
-//                        val error = result.getException()
-//                        Log.i("http-klaxon", "Error :${error}")
-//                    }
-//                    is Result.Success -> {
-//                        val postString = result.get()
-//                        Log.i("http-klaxon", "Error :${postString}")
-//                        val arreglo = Klaxon()
-//                            .parseArray<IPostHttp>(postString)
-//                        if (arreglo != null) {
-//                            arreglo
-//                                .forEach{
-//                                    Log.i("http-klaxon", "Error :${it?.title}")
-//                                }
-//                        }
-//
-//                    }
-//                }
-//            }
-//    }
+    fun metodoGetAll() {
+        "https://jsonplaceholder.typicode.com/posts"
+            .httpGet()
+            .responseString{
+                    request, response, result ->
+                when (result) {
+                    is Result.Failure -> {
+                        val error = result.getException()
+                        Log.i("http-klaxon", "Error :${error}")
+                    }
+                    is Result.Success -> {
+                        val postString = result.get()
+                        Log.i("http-klaxon", "Error :${postString}")
+                        val arreglo = Klaxon()
+                            .parseArray<IPostHttp>(postString)
+                        if (arreglo != null) {
+                            arreglo
+                                .forEach{
+                                    Log.i("http-klaxon", "Titulos :${it?.title}")
+                                }
+                        }
+
+                    }
+                }
+            }
+    }
 
     fun metodoGet() {
         "https://jsonplaceholder.typicode.com/posts/1"
