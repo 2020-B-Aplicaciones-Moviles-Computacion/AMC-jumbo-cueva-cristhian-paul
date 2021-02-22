@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".COrdenes">
+
+    <TextView
+        android:id="@+id/tv_seleccionar_restaurantes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RESTAURANTES"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.046" />
+
+    <Spinner
+        android:id="@+id/sp_restaurantes"
+        android:layout_width="263dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_seleccionar_restaurantes"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_seleccionar_restaurantes"
+        app:layout_constraintTop_toBottomOf="@+id/tv_seleccionar_restaurantes" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Agregar nuevo tipo comida"
+        app:layout_constraintEnd_toEndOf="@+id/sp_restaurantes"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/sp_restaurantes"
+        app:layout_constraintTop_toBottomOf="@+id/sp_restaurantes" />
+
+    <TextView
+        android:id="@+id/tv_arreglo_tipo_comida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="TEXTO TIPOS DE COMIDA"
+        app:layout_constraintEnd_toEndOf="@+id/et_tipo_comida"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/et_tipo_comida"
+        app:layout_constraintTop_toBottomOf="@+id/et_tipo_comida" />
+
+    <EditText
+        android:id="@+id/et_review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="88dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="@+id/tv_arreglo_tipo_comida"
+        app:layout_constraintTop_toBottomOf="@+id/tv_arreglo_tipo_comida" />
+
+    <EditText
+        android:id="@+id/et_tipo_comida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <Button
+        android:id="@+id/btn_añadir_tipo_comida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:text="ADD"
+        app:layout_constraintBottom_toBottomOf="@+id/et_tipo_comida"
+        app:layout_constraintStart_toEndOf="@+id/et_tipo_comida"
+        app:layout_constraintTop_toTopOf="@+id/et_tipo_comida"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Review"
+        app:layout_constraintEnd_toEndOf="@+id/tv_arreglo_tipo_comida"
+        app:layout_constraintHorizontal_bias="0.247"
+        app:layout_constraintStart_toStartOf="@+id/tv_arreglo_tipo_comida"
+        app:layout_constraintTop_toBottomOf="@+id/tv_arreglo_tipo_comida" />
+
+    <Button
+        android:id="@+id/btn_crear_orden"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="CREAR"
+        app:layout_constraintEnd_toEndOf="@+id/et_review"
+        app:layout_constraintHorizontal_bias="0.172"
+        app:layout_constraintStart_toStartOf="@+id/et_review"
+        app:layout_constraintTop_toBottomOf="@+id/et_review" />
+</androidx.constraintlayout.widget.ConstraintLayout>

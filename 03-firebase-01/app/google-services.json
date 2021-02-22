@@ -1,0 +1,97 @@
+{
+  "project_info": {
+    "project_number": "737281884138",
+    "project_id": "moviles-2020b-computacion",
+    "storage_bucket": "moviles-2020b-computacion.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:737281884138:android:8bcfb9b60b16f955653c93",
+        "android_client_info": {
+          "package_name": "com.example.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "737281884138-1u014o57i7u306cptdtn8c6t4atvv3uo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqgpkauET25KcPeXsV7BlbNAUH0CejbUs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "737281884138-1u014o57i7u306cptdtn8c6t4atvv3uo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:737281884138:android:5d3c0fc853c736bf653c93",
+        "android_client_info": {
+          "package_name": "com.example.firebase_ejemplo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "737281884138-1u014o57i7u306cptdtn8c6t4atvv3uo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqgpkauET25KcPeXsV7BlbNAUH0CejbUs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "737281884138-1u014o57i7u306cptdtn8c6t4atvv3uo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:737281884138:android:0e86345fd137bf3f653c93",
+        "android_client_info": {
+          "package_name": "com.example.firebaseasistente"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "737281884138-1u014o57i7u306cptdtn8c6t4atvv3uo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqgpkauET25KcPeXsV7BlbNAUH0CejbUs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "737281884138-1u014o57i7u306cptdtn8c6t4atvv3uo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
