@@ -62,13 +62,9 @@ class Intento_Imagenes : AppCompatActivity() {
         val storage = Firebase.storage
 
         val storageRef = storage.reference
-
-        // Create a reference to "imagen.jpg"
         val mountainsRef = storageRef.child("imagen.jpg")
 
         if(bitmapImagen != null) {
-          //  imageView.isDrawingCacheEnabled = true
-          //  imageView.buildDrawingCache()
             val bitmap = bitmapImagen as Bitmap
             val baos = ByteArrayOutputStream()
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
@@ -89,13 +85,9 @@ class Intento_Imagenes : AppCompatActivity() {
         val storage = Firebase.storage
 
         val storageRef = storage.reference
-
-        // Create a reference to "imagen.jpg"
         val mountainsRef = storageRef.child("foto.jpg")
 
         if(bitmapPhoto != null) {
-            //  imageView.isDrawingCacheEnabled = true
-            //  imageView.buildDrawingCache()
             val bitmap = bitmapPhoto as Bitmap
             val baos = ByteArrayOutputStream()
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
@@ -136,14 +128,14 @@ class Intento_Imagenes : AppCompatActivity() {
 
 
     override fun onActivityResult(
-        requestCode: Int,  // Codigo de petición  - Codigo: 102
-        resultCode: Int,  //  Codigo de Resultado - RESULT_OK o RESULT_CANCELED
-        data: Intent?  // Datos (opcionales)
+        requestCode: Int,
+        resultCode: Int,
+        data: Intent?
     ) {
         super.onActivityResult(requestCode, resultCode, data)
 
         when (requestCode) {
-            103 -> { // FOTOGRAFIA
+            103 -> {
                 val takenimage = data?.extras?.get("data") as Bitmap
 
                 val imagen=findViewById<ImageView>(R.id.im_mostrarImagen)
@@ -151,14 +143,10 @@ class Intento_Imagenes : AppCompatActivity() {
 
                 bitmapPhoto = takenimage
             }
-            104 -> { // IMAGEN ALMACENADA
+            104 -> {
                 var uri: Uri? = data?.data
                 var imaguri: Uri? = uri
-                /*if(imguri!=nu){
-
-                }*/
                 val imagen=findViewById<ImageView>(R.id.im_mostrarImagen)
-                //imagen.setImageURI(imguri)
                 val btmap: Bitmap =
                         MediaStore.Images.Media.getBitmap(this.contentResolver, imaguri)
                 imagen.setImageBitmap(btmap)
