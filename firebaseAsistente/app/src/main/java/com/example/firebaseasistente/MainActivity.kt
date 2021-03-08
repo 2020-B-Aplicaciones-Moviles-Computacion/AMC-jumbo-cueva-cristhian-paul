@@ -56,6 +56,13 @@ class MainActivity : AppCompatActivity() {
             )
         }
 
+        val botonMapa  = findViewById<Button>(R.id.btn_mapa)
+        botonMapa.setOnClickListener {
+            irActividad(
+                ContenedorMapa::class.java
+            )
+        }
+
     }
 
 
