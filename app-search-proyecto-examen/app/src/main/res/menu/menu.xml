@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_mapa"
+        android:title="Home"
+        app:cnb_iconColor="@color/colorTinder"/>
+    <item
+        android:id="@+id/reserva"
+        android:icon="@drawable/ic_reserva"
+        android:title="Reservas"
+        app:cnb_iconColor="@color/colorTinder"/>
+    <item
+        android:id="@+id/favorito"
+        android:icon="@drawable/ic_favorito"
+        android:title="Favoritos"
+        app:cnb_iconColor="@color/colorTinder"
+        />
+    <item
+        android:id="@+id/perfile"
+        android:icon="@drawable/ic_person"
+        android:title="Perifil"
+        app:cnb_iconColor="@color/colorTinder"
+        />
+</menu>
