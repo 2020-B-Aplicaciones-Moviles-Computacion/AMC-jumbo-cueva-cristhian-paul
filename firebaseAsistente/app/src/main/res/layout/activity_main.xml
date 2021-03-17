@@ -40,7 +40,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/btn_ingresar"
         app:layout_constraintTop_toTopOf="@+id/btn_ingresar"
         app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="227dp" />
+        tools:layout_editor_absoluteX="227dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_firestore"

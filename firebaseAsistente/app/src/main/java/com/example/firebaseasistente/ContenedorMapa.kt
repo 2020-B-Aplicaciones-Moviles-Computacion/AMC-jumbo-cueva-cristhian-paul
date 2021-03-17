@@ -1,10 +1,10 @@
 package com.example.firebaseasistente
 
 import android.content.pm.PackageManager
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -13,13 +13,14 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 
+
 class ContenedorMapa : AppCompatActivity(), OnMapReadyCallback,
-GoogleMap.OnCameraMoveListener,
-GoogleMap.OnCameraMoveStartedListener,
-GoogleMap.OnCameraIdleListener,
-GoogleMap.OnPolygonClickListener,
-GoogleMap.OnPolylineClickListener,
-GoogleMap.OnMarkerClickListener
+        GoogleMap.OnCameraMoveListener,
+        GoogleMap.OnCameraMoveStartedListener,
+        GoogleMap.OnCameraIdleListener,
+        GoogleMap.OnPolygonClickListener,
+        GoogleMap.OnPolylineClickListener,
+        GoogleMap.OnMarkerClickListener
 {
 
     private lateinit var mMap: GoogleMap
@@ -29,16 +30,16 @@ GoogleMap.OnMarkerClickListener
         setContentView(R.layout.activity_contenedor_mapa)
         solicitarPermisos()
         val mapFramgent = supportFragmentManager
-            .findFragmentById(R.id.map) as SupportMapFragment;
+                .findFragmentById(R.id.map) as SupportMapFragment;
         mapFramgent.getMapAsync(this);
 
-        val botonCarolina = findViewById<Button>(R.id.btn_mapa)
+        val botonCarolina = findViewById<Button>(R.id.btn_ir_carolina)
         botonCarolina
-            .setOnClickListener {
-                val quicentro = LatLng(-0.176125, -78.480208)
-                val zoom = 17f
-                moverCamaraZoom(quicentro,zoom)
-            }
+                .setOnClickListener {
+                    val quicentro = LatLng(-0.176125, -78.480208)
+                    val zoom = 17f
+                    moverCamaraZoom(quicentro,zoom)
+                }
 
     }
 
@@ -46,9 +47,9 @@ GoogleMap.OnMarkerClickListener
         if (googleMap != null) {
             mMap = googleMap
             mMap
-                .setOnPolygonClickListener {
-                    Log.i("mapa", "onPolygonClick")
-                }
+                    .setOnPolygonClickListener {
+                        Log.i("mapa", "onPolygonClick")
+                    }
             establecerConfiguracionMapa(googleMap)
             val quicentro = LatLng(-0.176125, -78.480208)
             val titulo = "Quicentro"
@@ -90,26 +91,26 @@ GoogleMap.OnMarkerClickListener
 
     fun moverCamaraZoom(latLng: LatLng, zoom: Float = 10f) {
         mMap.moveCamera(
-            CameraUpdateFactory.newLatLngZoom(latLng, zoom)
+                CameraUpdateFactory.newLatLngZoom(latLng, zoom)
 
         )
     }
 
     fun anadirMarcador (latLng: LatLng, title: String) {
         mMap.addMarker(
-            MarkerOptions()
-                .position(latLng)
-                .title(title)
+                MarkerOptions()
+                        .position(latLng)
+                        .title(title)
         )
     }
     fun establecerConfiguracionMapa(mapa: GoogleMap) {
         val context = this.applicationContext
         with(mapa) {
             val permisosFineLocation = ContextCompat
-                .checkSelfPermission(
-                    context,
-                    android.Manifest.permission.ACCESS_FINE_LOCATION
-                )
+                    .checkSelfPermission(
+                            context,
+                            android.Manifest.permission.ACCESS_FINE_LOCATION
+                    )
             val tienePermisos = permisosFineLocation == PackageManager.PERMISSION_GRANTED
             if(tienePermisos) {
                 mapa.isMyLocationEnabled = true
@@ -122,20 +123,20 @@ GoogleMap.OnMarkerClickListener
     fun solicitarPermisos(){
 
         val permisosFineLocation = ContextCompat
-            .checkSelfPermission(
-                this.applicationContext,
-                android.Manifest.permission.ACCESS_FINE_LOCATION
-            )
+                .checkSelfPermission(
+                        this.applicationContext,
+                        android.Manifest.permission.ACCESS_FINE_LOCATION
+                )
         val tienePermisos = permisosFineLocation == PackageManager.PERMISSION_GRANTED
         if(tienePermisos) {
             Log.i("mapa", "Tiene permisos Fine Location")
             this.tienePermisos = true
         } else {
             ActivityCompat.requestPermissions(
-                this,
-                arrayOf(
-                    android.Manifest.permission.ACCESS_FINE_LOCATION
-                ),1
+                    this,
+                    arrayOf(
+                            android.Manifest.permission.ACCESS_FINE_LOCATION
+                    ),1
             )
         }
 
