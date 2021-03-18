@@ -113,6 +113,7 @@ class ContenedorMapa : AppCompatActivity(), OnMapReadyCallback,
                     )
             val tienePermisos = permisosFineLocation == PackageManager.PERMISSION_GRANTED
             if(tienePermisos) {
+                Log.i("mapa", "Puede ver la ubicación")
                 mapa.isMyLocationEnabled = true
             }
             uiSettings.isZoomControlsEnabled =true
