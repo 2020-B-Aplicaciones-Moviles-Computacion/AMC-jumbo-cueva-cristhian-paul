@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeloyout_negocio"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:layout_margin="5dp"
+    android:background="@color/cardview_shadow_start_color"
+    >
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintBottom_toBottomOf="@+id/nombre_neg"
+        app:layout_constraintEnd_toStartOf="@+id/nombre_neg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_market" />
+
+    <TextView
+        android:id="@+id/nombre_neg"
+        android:layout_width="196dp"
+        android:layout_height="83dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="Negocio Nombre"
+        android:textAlignment="center"
+        android:textColor="#020202"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_eliminar_negocio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.795"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.126" />
+
+    <TextView
+        android:id="@+id/tv_direccion"
+        android:layout_width="264dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="20dp"
+        android:text="Dirección:"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.968"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombre_neg" />
+
+    <TextView
+        android:id="@+id/tv_distancia"
+        android:layout_width="264dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="8dp"
+        android:text="Distancia:"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_direccion" />
+
+    <TextView
+        android:id="@+id/tv_telefono"
+        android:layout_width="266dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="8dp"
+        android:text="Telefono:"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_distancia" />
+
+    <TextView
+        android:id="@+id/tv1_direccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="132dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="16dp"
+        android:text="Dirección:"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv1_distancia"
+        app:layout_constraintEnd_toStartOf="@+id/tv_direccion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv1_telefono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:text="Telefono:"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv_telefono"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <TextView
+        android:id="@+id/tv1_distancia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="172dp"
+        android:text="Distancia:"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv1_telefono"
+        app:layout_constraintEnd_toEndOf="@+id/tv1_direccion"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_actualizar_negocio"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:backgroundTint="@color/update"
+        android:text="Actualizar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_eliminar_negocio"
+        app:layout_constraintHorizontal_bias="0.687"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv1_telefono"
+        app:layout_constraintVertical_bias="0.714" />
+
+    <Button
+        android:id="@+id/btn_eliminar_negocio"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="72dp"
+        android:backgroundTint="@color/salir"
+        android:text="Eliminar"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_actualizar_negocio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_actualizar_negocio"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

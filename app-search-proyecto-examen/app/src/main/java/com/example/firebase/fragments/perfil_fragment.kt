@@ -1,14 +1,16 @@
 package com.example.firebase.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageView
+import androidx.fragment.app.Fragment
+import com.example.firebase.Negocio
 import com.example.firebase.R
+
 
 class Perfil_fragment : Fragment() {
 
@@ -27,6 +29,10 @@ class Perfil_fragment : Fragment() {
         val btnNegocios: Button  = view.findViewById(R.id.btn_negocios) as Button
         btnNegocios.setOnClickListener {
 
+            activity?.let{
+                val intent = Intent (it, Negocio::class.java)
+                it.startActivity(intent)
+            }
             Log.i("perfile", "click button perfile")
         }
         return view
