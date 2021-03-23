@@ -2,6 +2,9 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
 }
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 29
@@ -33,6 +36,7 @@ android {
     viewBinding {
         enabled true
     }
+    kapt { generateStubs = true }
 }
 allprojects {
     repositories {

@@ -45,7 +45,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/containedButton"
+        android:id="@+id/bnt_crear"
         style="@style/Widget.MaterialComponents.Button.Icon"
         android:layout_width="57dp"
         android:layout_height="47dp"
@@ -79,11 +79,11 @@
         android:text="Agrege negocios!"
         android:textAlignment="center"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/containedButton"
+        app:layout_constraintBottom_toBottomOf="@+id/bnt_crear"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/containedButton"
+        app:layout_constraintTop_toTopOf="@+id/bnt_crear"
         app:layout_constraintVertical_bias="0.521" />
 
     <androidx.recyclerview.widget.RecyclerView
